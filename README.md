@@ -1,10 +1,6 @@
-# [my-personal-website]()
+# My Personal Portfolio
 
-Personal website that showcases who you are. [Live demo](https://kararnab.github.io).
-
-The website is built with vanilla HTML and CSS, part of it copied from Nishanth Shanmugham under MIT license. The primary font faces used are Open Sans and Raleway. The social icons are from the [Ionicons](//ionicons.com) font set.
-
-![screen shot](http://i.imgur.com/uHXVJuy.png)
+Personal portfolio [Live demo](https://kararnab.github.io).
 
 # Questions
 
@@ -26,12 +22,11 @@ The website is built with vanilla HTML and CSS, part of it copied from Nishanth 
 
 Related help: [GitHub Pages](https://pages.github.com/), [Custom domains](https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/)
 
-# Assets
+# Attribution
 
-Images used:
+The website is built with vanilla HTML and CSS.
+This design is inspired from [link](https://github.com/codewithsadee/vcard-personal-portfolio/) and used under MIT license.
 
-* http://www.w3devcampus.com/wp-content/uploads/logoAndOther/logo_JavaScript.png (favicon)
-* http://i.imgur.com/1Xn0jPR.png (photo)
 
 # License 
 
