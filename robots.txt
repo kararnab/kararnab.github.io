@@ -1,0 +1,8 @@
+# https://www.robotstxt.org/robotstxt.html
+
+# Allow crawling of all content
+User-agent: *
+Allow: /
+
+# Recommended (but Optional)
+# Sitemap: https://1loom.com/sitemap.xml
