@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1Loom – Weaving the Possibilities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        goldAccent: '#d4af37',
+                        lightBg: '#f7f4ed',
+                        lightText: '#222222',
+                        lightCard: 'rgba(0, 0, 0, 0.03)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(212, 175, 55, 0.2);
+        }
+        [data-theme="light"] body {
+            background: #f7f4ed;
+            color: #222222;
+        }
+        [data-theme="dark"] body {
+            background: radial-gradient(circle, #2b1f10, #0f0d08);
+            color: white;
+        }
+    </style>
+</head>
+<body class="antialiased transition-colors duration-500">
+<!-- Header -->
+<header class="px-6 py-4 border-b border-gray-700 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-goldAccent">1Loom</h1>
+    <nav class="space-x-4 text-gray-300">
+        <a href="#developer" class="hover:text-goldAccent transition">Developer</a>
+        <a href="#social" class="hover:text-goldAccent transition">Social</a>
+        <a href="#chatter" class="hover:text-goldAccent transition">Chatter</a>
+        <a href="#opensource" class="hover:text-goldAccent transition">Open Source</a>
+    </nav>
+    <button onclick="toggleTheme()" class="ml-4 px-3 py-1 border border-goldAccent rounded-md text-goldAccent hover:bg-goldAccent hover:text-black transition">Toggle Theme</button>
+</header>
+
+<!-- Hero -->
+<section class="text-center py-20 px-6">
+    <div class="flex items-center">
+        <img src="./assets/images/1LoomLogo.png" alt="Arnab Kar" width="80">
+    </div>
+    <h2 class="text-4xl sm:text-5xl font-extrabold text-goldAccent mb-4">
+        Looming Endless Possibilities
+    </h2>
+    <p class="text-lg sm:text-xl text-gray-300 dark:text-gray-300 text-gray-700 max-w-2xl mx-auto"> <!-- text-gray-300 dark:text-gray-300 text-gray-700 removed -->
+        1Loom brings together a suite of powerful tools, platforms, and communities—woven into one future-focused ecosystem.
+    </p>
+</section>
+
+<!-- Verticals -->
+<section class="py-16 px-6 max-w-7xl mx-auto">
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Developer Tools -->
+        <div id="developer" class="card p-6 rounded-xl border border-goldAccent bg-[rgba(255,255,255,0.03)] dark:bg-[rgba(255,255,255,0.03)] light:bg-lightCard">
+            <div class="flex items-center space-x-3 mb-3">
+                <svg class="w-6 h-6 text-goldAccent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 7h18M3 12h18M3 17h18" />
+                </svg>
+                <h3 class="text-xl font-semibold text-goldAccent">Developer Tools</h3>
+            </div>
+            <p class="text-gray-400 dark:text-gray-400 text-gray-700">SDKs, APIs, and utilities that empower developers to build faster and better.</p>
+        </div>
+
+        <!-- Social -->
+        <div id="social" class="card p-6 rounded-xl border border-goldAccent bg-[rgba(255,255,255,0.03)] dark:bg-[rgba(255,255,255,0.03)] light:bg-lightCard">
+            <div class="flex items-center space-x-3 mb-3">
+                <svg class="w-6 h-6 text-goldAccent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 16v-5a2 2 0 00-2-2h-3V7a5 5 0 00-10 0v2H5a2 2 0 00-2 2v5a2 2 0 002 2h14a2 2 0 002-2z" />
+                </svg>
+                <h3 class="text-xl font-semibold text-goldAccent">Social</h3>
+            </div>
+            <p class="text-gray-400 dark:text-gray-400 text-gray-700">A micro-blogging platform like Twitter—designed to connect, share, and spark meaningful conversations.</p>
+        </div>
+
+        <!-- Chatter -->
+        <div id="chatter" class="card p-6 rounded-xl border border-goldAccent bg-[rgba(255,255,255,0.03)] dark:bg-[rgba(255,255,255,0.03)] light:bg-lightCard">
+            <div class="flex items-center space-x-3 mb-3">
+                <svg class="w-6 h-6 text-goldAccent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" />
+                </svg>
+                <h3 class="text-xl font-semibold text-goldAccent">Chatter</h3>
+            </div>
+            <p class="text-gray-400 dark:text-gray-400 text-gray-700">Real-time messaging that feels like WhatsApp, but with the power of 1Loom’s ecosystem integration.</p>
+        </div>
+
+        <!-- Open Source -->
+        <div id="opensource" class="card p-6 rounded-xl border border-goldAccent bg-[rgba(255,255,255,0.03)] dark:bg-[rgba(255,255,255,0.03)] light:bg-lightCard">
+            <div class="flex items-center space-x-3 mb-3">
+                <svg class="w-6 h-6 text-goldAccent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.1 0-2 .9-2 2s.9 2 2 2m0-6v2m0 4v6m6-6c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6 6 2.7 6 6z" />
+                </svg>
+                <h3 class="text-xl font-semibold text-goldAccent">Open Source</h3>
+            </div>
+            <p class="text-gray-400 dark:text-gray-400 text-gray-700">We believe in giving back. Explore our open-source projects and join the community shaping the future.</p>
+        </div>
+    </div>
+
+    <!-- Coming Soon Centered -->
+    <div class="mt-12 flex justify-center">
+        <div class="card max-w-3xl w-full text-center p-6 rounded-xl border border-goldAccent bg-[rgba(255,255,255,0.03)] dark:bg-[rgba(255,255,255,0.03)] light:bg-lightCard">
+            <h3 class="text-xl font-semibold text-goldAccent mb-2">...and more looming soon</h3>
+            <p class="text-gray-400 dark:text-gray-400 text-gray-700">We’re just getting started. Stay tuned for more platforms, ideas, and innovations coming out of the loom.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-6 border-t border-gray-700 text-sm text-gray-500">
+    &copy; 2025 1Loom Inc. | All rights reserved.
+</footer>
+
+<script>
+    function toggleTheme() {
+        const html = document.documentElement;
+        const newTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+        html.dataset.theme = newTheme;
+
+        // Ensure the class switching works properly
+        if (newTheme === 'dark') {
+            document.body.classList.add('dark'); // Add dark mode class
+        } else {
+            document.body.classList.remove('dark'); // Remove dark mode class
+        }
+    }
+</script>
+</body>
+</html>
