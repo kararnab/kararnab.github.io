@@ -6,6 +6,9 @@
     <defs>
     <style type="text/css">
         .st0{fill:#eaeaea;}
+        @media (prefers-color-scheme: light) {
+            .st0{fill:#1a1a1a;}
+        }
     </style>
     </defs>
     <rect x="37.43" class="st0" width="25.74" height="351.48"/>
