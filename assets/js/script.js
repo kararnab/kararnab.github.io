@@ -1,159 +1,141 @@
 'use strict';
 
+document.documentElement.classList.add('has-page-navigation');
 
+// Prefer hosted logos; keep the strip usable if a remote file moves or fails.
+document.querySelectorAll('img[data-fallback-src]').forEach(image => {
+    const useFallback = () => {
+        const source = image.dataset.fallbackSrc;
+        if (!source) return;
+        delete image.dataset.fallbackSrc;
+        image.src = source;
+    };
+    image.addEventListener('error', useFallback, { once: true });
+    if (image.complete && image.naturalWidth === 0) useFallback();
+});
 
-// element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
-
-
-
-// sidebar variables
-const sidebar = document.querySelector("[data-sidebar]");
-const sidebarBtn = document.querySelector("[data-sidebar-btn]");
-
-// sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
-
+// A quiet, manually scrolled row: no automatic rotation or hidden quotes.
+const testimonialRail = document.querySelector('#testimonial-list');
+const testimonialControls = document.querySelector('[data-testimonial-controls]');
+const previousTestimonials = document.querySelector('[data-testimonial-prev]');
+const nextTestimonials = document.querySelector('[data-testimonial-next]');
+function updateTestimonialControls() {
+    const end = testimonialRail.scrollWidth - testimonialRail.clientWidth;
+    previousTestimonials.disabled = testimonialRail.scrollLeft <= 2;
+    nextTestimonials.disabled = testimonialRail.scrollLeft >= end - 2;
+}
+function scrollTestimonials(direction) {
+    const cardWidth = testimonialRail.firstElementChild.getBoundingClientRect().width;
+    const gap = parseFloat(getComputedStyle(testimonialRail).columnGap) || 0;
+    testimonialRail.scrollBy({
+        left: direction * (cardWidth + gap),
+        behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
+    });
+}
+testimonialControls.hidden = false;
+previousTestimonials.addEventListener('click', () => scrollTestimonials(-1));
+nextTestimonials.addEventListener('click', () => scrollTestimonials(1));
+testimonialRail.addEventListener('scroll', updateTestimonialControls, { passive: true });
+if ('ResizeObserver' in window) new ResizeObserver(updateTestimonialControls).observe(testimonialRail);
+else window.addEventListener('resize', updateTestimonialControls);
+updateTestimonialControls();
 
 // testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
 const modalContainer = document.querySelector("[data-modal-container]");
 const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
-
-// modal variable
 const modalImg = document.querySelector("[data-modal-img]");
 const modalTitle = document.querySelector("[data-modal-title]");
 const modalText = document.querySelector("[data-modal-text]");
-
-// modal toggle function
-const testimonialsModalFunc = function () {
-    modalContainer.classList.toggle("active");
-    overlay.classList.toggle("active");
-}
-
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
-
-    testimonialsItem[i].addEventListener("click", function () {
-
-        modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-        modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-        modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-        modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
-
-        testimonialsModalFunc();
-
-    });
-
-}
-
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
-
-
-
-// custom select variables
-const select = document.querySelector("[data-select]");
-const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
-const filterBtn = document.querySelectorAll("[data-filter-btn]");
-
-select.addEventListener("click", function () { elementToggleFunc(this); });
-
-// add event in all select items
-for (let i = 0; i < selectItems.length; i++) {
-    selectItems[i].addEventListener("click", function () {
-
-        let selectedValue = this.innerText.toLowerCase();
-        selectValue.innerText = this.innerText;
-        elementToggleFunc(select);
-        filterFunc(selectedValue);
-
-    });
-}
-
-// filter variables
-const filterItems = document.querySelectorAll("[data-filter-item]");
-
-const filterFunc = function (selectedValue) {
-
-    for (let i = 0; i < filterItems.length; i++) {
-
-        if (selectedValue === "all") {
-            filterItems[i].classList.add("active");
-        } else if (selectedValue === filterItems[i].dataset.category) {
-            filterItems[i].classList.add("active");
+const modalSource = document.querySelector('[data-modal-source]');
+const modalDate = document.querySelector('[data-modal-date]');
+let testimonialTrigger;
+for (const item of testimonialsItem) {
+    const trigger = item.querySelector('[data-testimonials-open]');
+    trigger.addEventListener('click', () => {
+        modalImg.src = item.querySelector('[data-testimonials-avatar]').src;
+        modalImg.alt = item.querySelector('[data-testimonials-avatar]').alt;
+        modalTitle.textContent = item.querySelector('[data-testimonials-title]').textContent;
+        const date = item.dataset.testimonialDate;
+        modalDate.hidden = !date;
+        if (date) {
+            const [y, m, d] = date.split('-').map(Number);
+            modalDate.dateTime = date;
+            modalDate.textContent = new Date(y, m - 1, d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
         } else {
-            filterItems[i].classList.remove("active");
+            modalDate.removeAttribute('datetime');
+            modalDate.textContent = '';
         }
-
-    }
-
-}
-
-// add event in all filter button items for large screen
-let lastClickedBtn = filterBtn[0];
-
-for (let i = 0; i < filterBtn.length; i++) {
-
-    filterBtn[i].addEventListener("click", function () {
-
-        let selectedValue = this.innerText.toLowerCase();
-        selectValue.innerText = this.innerText;
-        filterFunc(selectedValue);
-
-        lastClickedBtn.classList.remove("active");
-        this.classList.add("active");
-        lastClickedBtn = this;
-
-    });
-
-}
-
-
-
-// contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
-
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-    formInputs[i].addEventListener("input", function () {
-
-        // check form validation
-        if (form.checkValidity()) {
-            formBtn.removeAttribute("disabled");
+        const source = item.dataset.testimonialSource;
+        modalSource.hidden = !source;
+        if (source) {
+            modalSource.href = source;
+            modalSource.setAttribute('aria-label', `View ${modalTitle.textContent}’s recommendation on LinkedIn (opens in a new tab)`);
         } else {
-            formBtn.setAttribute("disabled", "");
+            modalSource.removeAttribute('href');
+            modalSource.removeAttribute('aria-label');
         }
+        modalText.replaceChildren(...[...item.querySelector('[data-testimonials-text]').children].map(node => node.cloneNode(true)));
+        testimonialTrigger = trigger;
+        modalContainer.showModal();
+    });
+}
+modalCloseBtn.addEventListener('click', () => modalContainer.close());
+// Native dialog handles Escape and confines Tab focus; restore the opener on every close path.
+modalContainer.addEventListener('close', () => testimonialTrigger?.focus());
+modalContainer.addEventListener('click', event => {
+    const bounds = modalContainer.getBoundingClientRect();
+    if (event.target === modalContainer &&
+        (event.clientX < bounds.left || event.clientX > bounds.right ||
+         event.clientY < bounds.top || event.clientY > bounds.bottom)) modalContainer.close();
+});
 
+
+// Explicit category buttons work with pointer, keyboard and touch on every viewport.
+const filterBtn = document.querySelectorAll('[data-filter-btn]');
+const filterItems = document.querySelectorAll('[data-filter-item]');
+for (const button of filterBtn) {
+    button.addEventListener('click', () => {
+        const category = button.textContent.trim().toLowerCase();
+        filterItems.forEach(item => {
+            item.classList.toggle('active', category === 'all' || item.dataset.category === category);
+        });
+        filterBtn.forEach(filter => {
+            const selected = filter === button;
+            filter.classList.toggle('active', selected);
+            filter.setAttribute('aria-pressed', String(selected));
+        });
     });
 }
 
+// Preserve the shared header on direct links after the browser resolves its initial fragment.
+window.addEventListener('load', () => requestAnimationFrame(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+}), { once: true });
 
-
-// page navigation variables
-const navigationLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
-
-// add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-    navigationLinks[i].addEventListener("click", function () {
-
-        for (let i = 0; i < pages.length; i++) {
-            if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-                pages[i].classList.add("active");
-                navigationLinks[i].classList.add("active");
-                window.scrollTo(0, 0);
-            } else {
-                pages[i].classList.remove("active");
-                navigationLinks[i].classList.remove("active");
-            }
-        }
-
+// Keep portfolio tabs addressable, including reloads and browser Back/Forward.
+const navigationLinks = document.querySelectorAll('[data-nav-link]');
+const pages = document.querySelectorAll('[data-page]');
+function showPageFromHash() {
+    const requested = window.location.hash.slice(1).toLowerCase();
+    if (requested === 'main') return;
+    const selected = [...pages].some(page => page.dataset.page === requested) ? requested : 'about';
+    const titles = {
+        about: 'Arnab Kar — About the maker | 1Loom',
+        resume: 'Experience — Arnab Kar | 1Loom',
+        portfolio: 'Projects — Arnab Kar | 1Loom',
+        blog: 'Writing — Arnab Kar | 1Loom',
+        contact: 'Contact | 1Loom'
+    };
+    document.title = titles[selected];
+    pages.forEach(page => page.classList.toggle('active', page.dataset.page === selected));
+    navigationLinks.forEach(link => {
+        const active = link.getAttribute('href') === '#' + selected;
+        link.classList.toggle('active', active);
+        if (active) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
     });
+    window.scrollTo({ top: 0, behavior: 'instant' });
 }
+window.addEventListener('hashchange', showPageFromHash);
+showPageFromHash();

@@ -1,22 +1,57 @@
-The MIT License (MIT)
+Copyright (c) 2025-2026 Arnab Kar. All rights reserved.
 
-Copyright (c) 2018 Arnab Kar
+This repository contains the source and content of the 1Loom website
+(https://1loom.com), including the maker profile of Arnab Kar.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Except as stated below, no part of this repository may be copied, reproduced,
+modified, distributed, republished, or used to create derivative works without
+prior written permission from Arnab Kar. This includes, without limitation, the
+site's code, design, text, biography, résumé, photographs, contact card, app
+screenshots, privacy policies, terms of service, and the 1Loom, OpenNote,
+Connections, LibraryZ, AVPlayer, 1Chat and CodeAtlas names, logos and artwork.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+The repository is public so the site can be hosted on GitHub Pages. Being able
+to view it does not grant any licence to use it.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Third-party material
+--------------------
 
+The following material is not owned by Arnab Kar and remains subject to its
+owners' rights and licences:
+
+- assets/vendor/scrollcraft/ is distributed under the MIT License; see
+  assets/vendor/scrollcraft/LICENSE.
+
+- The images assets/images/avatar-1.png, avatar-2.png, avatar-3.png and
+  avatar-4.png are taken from vcard-personal-portfolio
+  (https://github.com/codewithsadee/vcard-personal-portfolio) and are used
+  under the following licence:
+
+    MIT License
+
+    Copyright (c) 2022 codewithsadee
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+
+- Testimonials are quoted with permission and remain the words of their
+  authors.
+
+- Company names and logos (including Swiggy, CureFit, Walgreens, Rently,
+  BMA Steels and GMCKS Lightworkers) are trademarks of their respective owners
+  and are shown only to identify organisations Arnab Kar has worked with.
