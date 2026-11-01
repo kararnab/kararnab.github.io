@@ -216,7 +216,7 @@ code { font: 500 .85em var(--mono); padding: .1em .4em; border-radius: 6px; back
 .store-soon small { color: var(--accent-text); }
 [data-app] .store-soon small { color: var(--app-ink); }
 
-/* Status chips & progress */
+/* Status chips */
 .status { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; font: 500 12px/1.3 var(--mono); white-space: nowrap; }
 .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; flex: none; }
 .status-live { background: var(--live-bg); color: var(--live-ink); }
@@ -225,10 +225,6 @@ code { font: 500 .85em var(--mono); padding: .1em .4em; border-radius: 6px; back
 .status-dev::before { background: var(--dev-dot); }
 .status-poc { background: var(--dev-bg); color: var(--dev-ink); }
 .status-poc::before { border: 2px solid var(--dev-dot); }
-.progress { display: grid; gap: 8px; }
-.progress-label { display: flex; justify-content: space-between; gap: 12px; font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
-.progress-track { height: 8px; border-radius: 999px; background: var(--sunk); border: 1px solid var(--line); overflow: hidden; }
-.progress-fill { height: 100%; background: var(--app); border-radius: inherit; }
 
 /* App icon tiles */
 .app-tile { width: 52px; height: 52px; border-radius: 14px; flex: none; display: grid; place-items: center; background: var(--app); color: var(--on-app); font: 700 24px var(--display); overflow: hidden; }
@@ -263,7 +259,6 @@ code { font: 500 .85em var(--mono); padding: .1em .4em; border-radius: 6px; back
 
 /* App cards */
 .app-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-.app-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .app-grid-label { margin: 48px 0 20px; }
 .app-card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 .app-card::before { content: ""; height: 6px; background: var(--app); }
@@ -368,6 +363,8 @@ code { font: 500 .85em var(--mono); padding: .1em .4em; border-radius: 6px; back
 .policy-body { max-width: 70ch; font-size: 17px; line-height: 1.75; color: var(--ink-soft); }
 .policy-body section + section { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--line); }
 .policy-body h2 { font-size: 26px; color: var(--ink); margin-bottom: 14px; scroll-margin-top: 24px; }
+.policy-body h3 { font-size: 19px; color: var(--ink); margin: 26px 0 6px; }
+.policy-body h2 + h3 { margin-top: 0; }
 .policy-body p + p, .policy-body p + ul, .policy-body ul + p { margin-top: 14px; }
 .policy-body ul { padding-left: 1.3em; margin: 14px 0 0; }
 .policy-body li + li { margin-top: 8px; }
@@ -380,7 +377,6 @@ code { font: 500 .85em var(--mono); padding: .1em .4em; border-radius: 6px; back
   .hero, .app-hero .wrap, .policy-layout { grid-template-columns: minmax(0, 1fr); }
   .loom { min-height: 440px; max-width: 520px; width: 100%; justify-self: center; }
   .features, .gallery, .other-apps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .app-grid-3 { grid-template-columns: minmax(0, 1fr); }
   .policy-toc { position: static; }
   .policy-toc { padding: 20px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
   .site-footer .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -415,3 +411,68 @@ code { font: 500 .85em var(--mono); padding: .1em .4em; border-radius: 6px; back
   body { background: #fff; color: #000; }
   .policy-layout { display: block; }
 }
+
+/* Allow the full navigation to wrap on narrow screens. */
+@media (max-width: 600px) {
+  .site-header .wrap { flex-wrap: wrap; }
+  .site-nav { flex-wrap: wrap; min-width: 0; }
+  .site-nav ul { flex-wrap: wrap; }
+}
+@media (max-width: 600px) {
+  .site-header .wrap { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; }
+  .site-nav { display: contents; }
+  .site-nav ul { grid-column: 1 / -1; grid-row: 2; justify-content: center; }
+  .site-nav .theme-toggle { grid-column: 2; grid-row: 1; justify-self: end; }
+}
+
+/* CodeAtlas follows the shared app palette in both themes. */
+[data-app="codeatlas"] { --app: #3159bd; --app-ink: #254797; }
+:root[data-theme="dark"] [data-app="codeatlas"], :root[data-theme="dark"][data-app="codeatlas"] { --app: #a9bfff; --app-ink: #bfd0ff; }
+.site-footer a { overflow-wrap: anywhere; }
+
+.codeatlas-previews .codeatlas-overview { grid-column: 1 / -1; }
+.codeatlas-previews a { display: block; border-radius: 18px; }
+.codeatlas-previews img { display: block; height: auto; }
+
+/* Trademark notice appears once, beside the footer brand. */
+.site-footer .brand-trademark { align-self: flex-start; margin: 1px 0 0 -7px; font-size: 10px; line-height: 1; font-weight: 500; }
+
+/* 1Chat launch: homepage spotlight, share card and FAQ */
+.spotlight-wrap { padding-block: 56px 8px; }
+.spotlight { position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 32px; align-items: center; padding: 48px 56px 0; border-radius: 28px; background: #160b4a; color: #fff; }
+.spotlight .eyebrow { color: #b9a8ff; }
+.spotlight h2 { font-size: clamp(32px, 4.4vw, 52px); line-height: 1.02; letter-spacing: -.03em; margin: 14px 0 0; padding-bottom: 0; }
+.spotlight h2 em { font-style: normal; color: #b9a8ff; }
+.spotlight p { margin-top: 18px; max-width: 32em; font-size: 18px; line-height: 1.55; color: rgba(255, 255, 255, .8); }
+.spotlight .actions { margin: 28px 0 48px; display: flex; flex-wrap: wrap; gap: 12px; }
+.spotlight .button { background: #fff; color: #160b4a; }
+.spotlight .button:hover { background: #e9e4ff; }
+.spotlight .button-line { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .45); }
+.spotlight .button-line:hover { background: rgba(255, 255, 255, .1); }
+.spotlight :focus-visible { outline-color: #fff; }
+.spotlight-head { display: flex; align-items: center; gap: 14px; }
+.spotlight-head .app-tile { width: 56px; height: 56px; border-radius: 15px; }
+.spotlight-head .status { background: rgba(255, 255, 255, .12); color: #fff; }
+.spotlight-shot { align-self: end; justify-self: center; width: 100%; max-width: 300px; margin-bottom: -120px; border-radius: 28px 28px 0 0; box-shadow: 0 -10px 60px rgba(0, 0, 0, .35); }
+
+.share-card { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; margin-top: 48px; padding: 32px 36px; border-radius: 24px; background: var(--app-soft); border: 1px solid var(--app-soft-line); }
+.share-card h3 { font-size: 26px; }
+.share-card p { color: var(--muted); margin-top: 6px; }
+.share-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.share-links .button svg { width: 18px; height: 18px; }
+
+.faq { max-width: 820px; border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 22px 0; cursor: pointer; list-style: none; font: 600 20px/1.35 var(--display); color: var(--ink); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; flex: none; font: 400 28px/1 var(--body); color: var(--app-ink); transition: transform .2s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { padding: 0 0 22px; max-width: 65ch; color: var(--ink-soft); font-size: 17px; line-height: 1.65; }
+.faq details a { color: var(--app-ink); font-weight: 600; }
+
+@media (max-width: 860px) {
+  .spotlight { grid-template-columns: minmax(0, 1fr); padding: 36px 28px 0; }
+  .spotlight-shot { max-width: 240px; margin-bottom: -160px; }
+  .spotlight .actions { margin-bottom: 32px; }
+}
+@media (prefers-reduced-motion: reduce) { .faq summary::after { transition: none; } }
