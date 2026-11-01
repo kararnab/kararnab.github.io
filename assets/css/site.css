@@ -415,3 +415,29 @@ code { font: 500 .85em var(--mono); padding: .1em .4em; border-radius: 6px; back
   body { background: #fff; color: #000; }
   .policy-layout { display: block; }
 }
+
+/* Allow the full navigation to wrap on narrow screens. */
+@media (max-width: 600px) {
+  .site-header .wrap { flex-wrap: wrap; }
+  .site-nav { flex-wrap: wrap; min-width: 0; }
+  .site-nav ul { flex-wrap: wrap; }
+  .progress-label { flex-wrap: wrap; }
+}
+@media (max-width: 600px) {
+  .site-header .wrap { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; }
+  .site-nav { display: contents; }
+  .site-nav ul { grid-column: 1 / -1; grid-row: 2; justify-content: center; }
+  .site-nav .theme-toggle { grid-column: 2; grid-row: 1; justify-self: end; }
+}
+
+/* CodeAtlas follows the shared app palette in both themes. */
+[data-app="codeatlas"] { --app: #3159bd; --app-ink: #254797; }
+:root[data-theme="dark"] [data-app="codeatlas"], :root[data-theme="dark"][data-app="codeatlas"] { --app: #a9bfff; --app-ink: #bfd0ff; }
+.site-footer a { overflow-wrap: anywhere; }
+
+.codeatlas-previews .codeatlas-overview { grid-column: 1 / -1; }
+.codeatlas-previews a { display: block; border-radius: 18px; }
+.codeatlas-previews img { display: block; height: auto; }
+
+/* Trademark notice appears once, beside the footer brand. */
+.site-footer .brand-trademark { align-self: flex-start; margin: 1px 0 0 -7px; font-size: 10px; line-height: 1; font-weight: 500; }

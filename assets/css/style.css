@@ -2036,3 +2036,31 @@ textarea.form-input::-webkit-resizer { display: none; }
 :root[data-theme="light"] body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 0%, 0.2); }
 
 :root[data-theme="dark"] { color-scheme: dark; }
+
+/* Contact form labels and delivery feedback. */
+.contact-field { display: grid; gap: 8px; color: var(--white-2); font-size: var(--fs-6); min-width: 0; }
+.contact-field .form-input { width: 100%; }
+.contact-status, .contact-notice { color: var(--white-2); font-size: var(--fs-6); margin-bottom: 20px; }
+.contact-status:empty { display: none; }
+.contact-notice a, .contact-status a { display: inline; color: var(--orange-yellow-crayola); text-decoration: underline; }
+.form-btn:focus-visible { outline: 2px solid var(--orange-yellow-crayola); outline-offset: 4px; }
+
+/* Shared destinations keep the maker portfolio connected to the studio. */
+.portfolio-site-header { max-width: 1200px; margin: 16px auto 0; padding: 0 12px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; }
+.portfolio-site-header nav { display: flex; flex-wrap: wrap; gap: 4px; }
+.portfolio-site-header a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 12px; color: var(--white-2); font-size: var(--fs-6); border-radius: 12px; }
+.portfolio-site-header .portfolio-brand { color: var(--orange-yellow-crayola); font-weight: var(--fw-500); }
+.portfolio-site-header a:hover { background: var(--jet); }
+.portfolio-site-header a:focus-visible, .navbar-link:focus-visible { outline: 2px solid var(--orange-yellow-crayola); outline-offset: 2px; }
+
+/* Keep feedback readable and contained next to the form action. */
+.contact-status { --status-accent: var(--orange-yellow-crayola); padding: 18px 20px; border: 1px solid var(--jet); border-left: 3px solid var(--status-accent); border-radius: 12px; background: var(--eerie-black-1); line-height: 1.6; overflow-wrap: anywhere; }
+.contact-status[hidden], .contact-status [hidden] { display: none; }
+.contact-status-title { display: block; margin-bottom: 5px; font-size: 15px; font-weight: 600; }
+.contact-status p { margin: 0; color: var(--light-gray); }
+.contact-status a { display: inline-block; margin-top: 12px; padding-block: 4px; font-weight: 500; }
+.contact-status a span { display: inline; }
+.contact-status[data-state="error"] { --status-accent: #f2a09b; }
+.contact-status[data-state="success"] { --status-accent: #8fd3af; }
+:root[data-theme="light"] .contact-status[data-state="error"] { --status-accent: #b33c35; }
+:root[data-theme="light"] .contact-status[data-state="success"] { --status-accent: #227449; }
