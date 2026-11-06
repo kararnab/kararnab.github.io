@@ -95,7 +95,7 @@
     const app = new URLSearchParams(window.location.search).get('app');
     const message = form.querySelector('[name="message"]');
     if (['AVPlayer', '1Chat', 'CodeAtlas'].includes(app) && !message.value) {
-        message.value = 'Hi Arnab, I’m interested in early access to ' + app + '. Please let me know about testing opportunities.';
+        message.value = 'Hi 1Loom team, I’m interested in early access to ' + app + '. Please let me know about testing opportunities.';
     }
     const button = form.querySelector('[data-form-btn]');
     const buttonText = button.querySelector('span');
@@ -135,12 +135,12 @@
         try {
             await sendMessage(...fields.map(field => field.value.trim()));
             form.reset();
-            showStatus('success', 'Message received', 'Thanks for reaching out. I’ll get back to you soon.');
+            showStatus('success', 'Message received', 'Thanks for reaching out. We’ll get back to you soon.');
         } catch (error) {
             if (error.stage === 'verification') {
-                showStatus('error', 'Couldn’t verify your request', 'Your message hasn’t been sent. Try again, or contact me by email.');
+                showStatus('error', 'Couldn’t verify your request', 'Your message hasn’t been sent. Try again, or contact us by email.');
             } else {
-                showStatus('error', 'Delivery could not be confirmed', 'Your text is still here. You can retry or email me; retrying may send a duplicate.');
+                showStatus('error', 'Delivery could not be confirmed', 'Your text is still here. You can retry or email us; retrying may send a duplicate.');
             }
         } finally {
             sending = false;

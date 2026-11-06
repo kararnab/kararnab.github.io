@@ -32,3 +32,9 @@ test('hash changes switch tabs and clear the previous current state', () => {
 test('missing or unknown tab falls back to About', () => {
     for (const hash of ['', '#unknown']) assert.equal(setup(hash).pages[0].classList.active, true);
 });
+test('skip-to-content preserves the selected section', () => {
+    const h = setup('#contact');
+    h.navigate('#main');
+    assert.equal(h.pages[4].classList.active, true);
+    assert.equal(h.links[4].current, 'page');
+});
