@@ -13,6 +13,7 @@ resume, writing links, and contact form.
 | `about-me/index.html`                   | Maker profile, resume, portfolio, blog links, and Contact tab             |
 | `assets/css/`                           | Shared site and portfolio styles                                          |
 | `assets/js/theme.js`                    | Theme handling                                                            |
+| `assets/js/motion.js`, `assets/css/motion.css` | App page motion and the icon hand-off between pages (off for reduced motion) |
 | `assets/js/script.js`                   | Portfolio navigation and interactions                                     |
 | `assets/js/contact.js`                  | GoDaddy Conversations contact integration                                 |
 | `assets/images/`                        | Site images and icons                                                     |
@@ -75,6 +76,7 @@ node tests/contact.test.cjs
 node tests/navigation.test.cjs
 node --check assets/js/contact.js
 node --check assets/js/script.js
+node --check assets/js/motion.js
 git diff --check
 ```
 

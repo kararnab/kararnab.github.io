@@ -18,10 +18,14 @@
   <link rel="icon" href="assets/images/logo.ico">
   <link rel="apple-touch-icon" href="welcome/images/1LoomIcon-192.png">
   <script src="assets/js/theme.js"></script>
+  <script src="assets/js/motion.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Instrument+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
+  <link rel="stylesheet" href="assets/vendor/scrollcraft/scrollcraft.css">
   <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <noscript><style>[data-sc-cue],[data-sc-in],[data-sc-stagger]>*{opacity:1!important;transform:none!important}</style></noscript>
   <link rel="manifest" href="welcome/site.webmanifest">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"1Loom","url":"https://1loom.com/","logo":"https://1loom.com/welcome/images/1LoomIcon-512.png","@id":"https://1loom.com/#org","founder":{"@type":"Person","name":"Arnab Kar","url":"https://1loom.com/about-me/"},"email":"arnabrocking@gmail.com"},{"@type":"WebSite","@id":"https://1loom.com/#site","url":"https://1loom.com/","name":"1Loom","publisher":{"@id":"https://1loom.com/#org"}}]}</script>
 </head>
@@ -43,168 +47,220 @@
   </div>
 </header>
 
-<main id="main">
-  <section class="wrap hero" aria-labelledby="hero-title">
-    <div>
-      <p class="eyebrow">Independent software studio</p>
-      <h1 id="hero-title">Many apps.<br>One careful loom.</h1>
-      <p class="lead">Independent apps for handwritten notes, private contacts, private chat and your own libraries. Start with OpenNote and Connections on Android, or explore what’s taking shape next.</p>
-      <div class="actions">
-        <a class="button button-solid" href="#apps">Explore the apps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
-        <a class="button button-line" href="about-me/index.html">Meet the maker</a>
-      </div>
-    </div>
-    <div class="loom" aria-hidden="true">
-      <div class="loom-threads"><span></span><span></span><span></span><span></span><span></span></div>
-      <img class="shot-a" src="assets/images/apps/opennote-write.webp" alt="" width="720" height="1280">
-      <img class="shot-b" src="assets/images/apps/connections-detail.webp" alt="" width="600" height="1333">
-    </div>
-  </section>
+<main id="main" class="home">
 
-  <div class="status-strip">
-    <ul class="wrap" aria-label="App status at a glance">
-      <li>2 apps on Google Play</li>
-      <li class="dev">3 in development</li>
-      <li class="poc">1 coming soon</li>
-    </ul>
-  </div>
-
-  <section class="wrap spotlight-wrap" aria-labelledby="spotlight-title">
-    <div class="spotlight" data-app="onechat">
-      <div>
-        <div class="spotlight-head"><span class="app-tile"><img src="assets/images/apps/1chat-icon.webp" alt="" width="56" height="56"></span><p class="eyebrow" style="margin:0">New from 1Loom</p><span class="status">Coming soon</span></div>
-        <h2 id="spotlight-title">1Chat. Chat like nobody’s reading. <em>Because nobody is.</em></h2>
-        <p>Private messaging with end-to-end encrypted chats, voice and video calls, and backups only you can open. Coming soon to Android and iPhone.</p>
-        <div class="actions">
-          <a class="button" href="apps/1chat/index.html">Meet 1Chat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="button button-line" href="about-me/index.html?app=1Chat#contact">Get early access</a>
+  <!-- The loom: a brass weft passes over OpenNote, under 1Chat and over Connections. -->
+  <section class="loom-act" data-sc-act="pin" data-sc-span="1.6" aria-labelledby="hero-title">
+    <div data-sc-stage class="loom-stage">
+      <div class="wrap loom-grid">
+        <div class="loom-copy">
+          <h1 id="hero-title">Many apps.<br>One careful loom.</h1>
+          <p class="lead">1Loom is an independent studio making apps for handwritten notes, private contacts, private chat and your own libraries.</p>
+          <div class="actions">
+            <a class="button button-solid" href="#apps">Explore the apps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+            <a class="button button-line" href="about-me/index.html">Meet the maker</a>
+          </div>
+        </div>
+        <div class="loom-scene" aria-hidden="true">
+          <div class="loom-glow"></div>
+          <svg class="loom-warp" data-sc-parallax="-1.4" viewBox="0 0 100 105" preserveAspectRatio="none"><g><line x1="4" y1="0" x2="4" y2="105"/><line x1="16" y1="0" x2="16" y2="105"/><line x1="28" y1="0" x2="28" y2="105"/><line x1="40" y1="0" x2="40" y2="105"/><line x1="52" y1="0" x2="52" y2="105"/><line x1="64" y1="0" x2="64" y2="105"/><line x1="76" y1="0" x2="76" y2="105"/><line x1="88" y1="0" x2="88" y2="105"/><line x1="100" y1="0" x2="100" y2="105"/></g></svg>
+          <div class="loom-plane plane-back" data-sc-parallax="-0.9"><img src="assets/images/apps/opennote-write.webp" alt="" width="720" height="1280"></div>
+          <div class="loom-plane plane-weft" data-sc-parallax="0.5"><svg viewBox="0 0 100 105"><path class="weft" d="M-60 62 c 7 -6 13 -6 20 0 s 13 6 20 0 s 13 -6 20 0 s 13 6 20 0 s 13 -6 20 0 s 13 6 20 0 s 13 -6 20 0 s 13 6 20 0 s 13 -6 20 0 s 13 6 20 0 s 13 -6 20 0"/></svg></div>
+          <div class="loom-plane plane-focal" data-sc-parallax="-0.3"><img src="assets/images/apps/1chat-chat.webp" alt="" width="600" height="1333"></div>
+          <div class="loom-plane plane-near" data-sc-parallax="0.5"><img src="assets/images/apps/connections-detail.webp" alt="" width="600" height="1333"></div>
+          <div class="loom-plane plane-weft plane-weft-over" data-sc-parallax="0.5"><svg viewBox="0 0 100 105"><path class="weft" d="M-60 62 c 7 -6 13 -6 20 0 s 13 6 20 0 s 13 -6 20 0 s 13 6 20 0 s 13 -6 20 0 s 13 6 20 0 s 13 -6 20 0 s 13 6 20 0 s 13 -6 20 0 s 13 6 20 0 s 13 -6 20 0"/></svg></div>
         </div>
       </div>
-      <img class="spotlight-shot" src="assets/images/apps/1chat-chat.webp" alt="1Chat screenshot: Mom asks “Did you eat?” and gets a photo of strawberries in reply." width="600" height="1333" loading="lazy">
     </div>
   </section>
 
-  <section id="apps" class="section" aria-labelledby="apps-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">The apps</p>
-        <h2 id="apps-title" class="section-title">Small apps, each built to do one job well.</h2>
-      </div>
-      <div class="app-grid">
-        <article class="app-card" data-app="opennote" data-stage="live" aria-labelledby="card-opennote">
-          <div class="app-card-body">
-            <div class="app-card-top">
-              <div class="app-card-name"><span class="app-tile" data-app="opennote"><img src="assets/images/apps/opennote-icon.webp" alt="" width="72" height="72"></span><h3 id="card-opennote">OpenNote</h3></div>
-              <span class="status status-live">On Google Play</span>
+  <section class="tally" data-sc-act="flow" aria-label="Where the apps stand">
+    <p class="wrap" data-sc-in>Two apps on Google Play. <span>Three in development.</span> <span>One coming soon.</span></p>
+  </section>
+
+  <!-- The peak. -->
+  <section id="onechat" class="peak" data-app="onechat" data-sc-act="pin" data-sc-span="2.4" aria-labelledby="peak-title">
+    <div data-sc-stage class="peak-stage">
+      <div class="wrap peak-grid">
+        <div class="peak-copy">
+          <div class="peak-id" data-sc-cue="0 1 0 0"><span class="app-tile"><img src="assets/images/apps/1chat-icon.webp" alt="" width="56" height="56"></span><span class="status">1Chat · Coming soon</span></div>
+          <h2 id="peak-title" class="lit"><span class="peak-a">Chat like nobody’s reading.</span> <em class="peak-b">Because nobody is.</em></h2>
+          <div class="peak-more">
+            <p>End-to-end encrypted chats, voice and video calls, and backups only you can open. Coming soon to Android and iPhone.</p>
+            <div class="actions">
+              <a class="button" href="apps/1chat/index.html">Meet 1Chat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              <a class="button button-line" href="about-me/index.html?app=1Chat#contact">Get early access</a>
             </div>
-            <p class="app-card-pitch">Handwritten notes that feel like paper. Write, sketch and organise your pages — offline, on your device.</p>
-            <dl class="facts">
-              <dt>For</dt><dd>Students, journal keepers and anyone who thinks better with a pen.</dd>
-              <dt>Next</dt><dd>Install it on Android. The iOS version is in development.</dd>
-            </dl>
-            <div class="actions"><a class="button button-app" href="apps/opennote/index.html">Meet OpenNote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="button button-line" href="https://play.google.com/store/apps/details?id=com.kararnab.bestnote" rel="noopener">Google Play<span class="visually-hidden"> – OpenNote</span></a></div>
           </div>
-        </article>
-        <article class="app-card" data-app="connections" data-stage="live" aria-labelledby="card-connections">
-          <div class="app-card-body">
-            <div class="app-card-top">
-              <div class="app-card-name"><span class="app-tile" data-app="connections" aria-hidden="true">C</span><h3 id="card-connections">Connections</h3></div>
-              <span class="status status-live">On Google Play</span>
-            </div>
-            <p class="app-card-pitch">A contacts app without Internet access. Your address book stays encrypted on your phone.</p>
-            <dl class="facts">
-              <dt>For</dt><dd>Android users who want a private address book that other apps can’t see.</dd>
-              <dt>Next</dt><dd>Install it on Android and import your contacts from a vCard file.</dd>
-            </dl>
-            <div class="actions"><a class="button button-app" href="apps/connections/index.html">Meet Connections <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="button button-line" href="https://play.google.com/store/apps/details?id=com.kararnab.connections" rel="noopener">Google Play<span class="visually-hidden"> – Connections</span></a></div>
+        </div>
+        <div class="peak-phone">
+          <div class="flip">
+            <img class="face face-front" src="assets/images/apps/1chat-chat.webp" alt="1Chat: Mom asks “Did you eat?” and gets a photo of strawberries in reply." width="600" height="1333">
+            <img class="face face-back" src="assets/images/apps/1chat-private.webp" alt="1Chat: “So private, even Chacha’s confused.” End-to-end encrypted, not even 1Chat can read your messages." width="720" height="1280" loading="lazy">
           </div>
-        </article>
-      </div>
-      <h3 class="eyebrow app-grid-label">In development</h3>
-      <div class="app-grid">
-        <article class="app-card" data-app="libraryz" data-stage="dev" aria-labelledby="card-libraryz">
-          <div class="app-card-body">
-            <div class="app-card-top">
-              <div class="app-card-name"><span class="app-tile" data-app="libraryz" aria-hidden="true">Lz</span><h3 id="card-libraryz">LibraryZ</h3></div>
-              <span class="status status-dev">Open source · In development</span>
-            </div>
-            <p class="app-card-pitch">A book library your community builds together — self-hosted, with apps for Android, desktop and the web.</p>
-            <dl class="facts">
-              <dt>For</dt><dd>Book clubs, labs, schools and families who want one shared shelf on their own server.</dd>
-              <dt>Next</dt><dd>Explore the open-source code on GitHub, run it on your own server, or help build it.</dd>
-            </dl>
-            <div class="actions"><a class="button button-app" href="apps/libraryz/index.html">Meet LibraryZ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="button button-line" href="https://github.com/kararnab/LibraryZ" rel="noopener">GitHub<span class="visually-hidden"> – LibraryZ</span></a></div>
-          </div>
-        </article>
-        <article class="app-card" data-app="avplayer" data-stage="dev" aria-labelledby="card-avplayer">
-          <div class="app-card-body">
-            <div class="app-card-top">
-              <div class="app-card-name"><span class="app-tile" data-app="avplayer" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><h3 id="card-avplayer">AVPlayer</h3></div>
-              <span class="status status-dev">In development</span>
-            </div>
-            <p class="app-card-pitch">A self-hosted streaming library for your own films, series and music — on phone, desktop, browser and TV.</p>
-            <dl class="facts">
-              <dt>For</dt><dd>People who keep their own media collection and want to stream it from their own hardware.</dd>
-              <dt>Next</dt><dd>Not released yet. Ask about early access.</dd>
-            </dl>
-            <div class="actions"><a class="button button-app" href="apps/avplayer/index.html">Meet AVPlayer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="button button-line" href="about-me/index.html?app=AVPlayer#contact">Ask about early access</a></div>
-          </div>
-        </article>
-        <article class="app-card" data-app="codeatlas" data-stage="dev" aria-labelledby="card-codeatlas">
-          <div class="app-card-body">
-            <div class="app-card-top"><div class="app-card-name"><span class="app-tile" data-app="codeatlas" aria-hidden="true">Ca</span><h3 id="card-codeatlas">CodeAtlas</h3></div><span class="status status-dev">In development</span></div>
-            <p class="app-card-pitch">An algorithm concept map with a Java coding arena. Explore how ideas connect, practise problems, and track your mastery.</p>
-            <dl class="facts"><dt>For</dt><dd>Learners practising data structures and algorithms.</dd><dt>Next</dt><dd>Not released yet. Ask about early testing; no release date is set.</dd></dl>
-            <div class="actions"><a class="button button-app" href="apps/codeatlas/index.html">Meet CodeAtlas</a><a class="button button-line" href="about-me/index.html?app=CodeAtlas#contact">Ask about early access</a></div>
-          </div>
-        </article>
-        <article class="app-card" data-app="onechat" data-stage="dev" aria-labelledby="card-onechat">
-          <div class="app-card-body">
-            <div class="app-card-top">
-              <div class="app-card-name"><span class="app-tile" data-app="onechat"><img src="assets/images/apps/1chat-icon.webp" alt="" width="52" height="52"></span><h3 id="card-onechat">1Chat</h3></div>
-              <span class="status status-dev">Coming soon</span>
-            </div>
-            <p class="app-card-pitch">Chat like nobody’s reading. Because nobody is. End-to-end encrypted messages, voice and video calls, and backups only you can open.</p>
-            <dl class="facts">
-              <dt>For</dt><dd>Families and friends who want their chats to stay between them.</dd>
-              <dt>Next</dt><dd>Coming soon to Google Play, then the App Store.</dd>
-            </dl>
-            <p class="note">Status reviewed <time datetime="2026-11-06">November 2026</time> · In final testing on Android</p>
-            <div class="actions"><a class="button button-app" href="apps/1chat/index.html">Meet 1Chat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="button button-line" href="about-me/index.html?app=1Chat#contact">Ask about early access</a></div>
-          </div>
-        </article>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="studio" class="section" aria-labelledby="studio-title" style="padding-top:0">
+  <section id="apps" class="catalog" aria-labelledby="apps-title">
+    <div class="wrap catalog-head">
+      <p class="eyebrow">The apps</p>
+      <h2 id="apps-title" class="section-title">Small apps, each built to do one job well.</h2>
+      <nav class="app-index" aria-label="Jump to an app">
+        <ul>
+          <li data-app="opennote"><a href="#app-opennote">OpenNote</a></li>
+          <li data-app="connections"><a href="#app-connections">Connections</a></li>
+          <li data-app="onechat"><a href="#onechat">1Chat</a></li>
+          <li data-app="libraryz"><a href="#app-libraryz">LibraryZ</a></li>
+          <li data-app="avplayer"><a href="#app-avplayer">AVPlayer</a></li>
+          <li data-app="codeatlas"><a href="#app-codeatlas">CodeAtlas</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Supporting moment: the page writes itself. -->
+    <article id="app-opennote" class="pick pick-feature" data-app="opennote" data-stage="live" data-sc-act="flow" aria-labelledby="pick-opennote">
+      <div class="wrap pick-grid">
+        <div class="pick-label" data-sc-in data-sc-stagger="60">
+          <div class="pick-name"><span class="app-tile app-tile-lg"><img src="assets/images/apps/opennote-icon.webp" alt="" width="72" height="72"></span><span class="status status-live">On Google Play</span></div>
+          <h3 id="pick-opennote" class="ink-title">OpenNote<svg class="ink" viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 15 C 40 6, 70 20, 110 12 S 180 4, 220 14 S 280 18, 297 9"/></svg></h3>
+          <p class="pick-pitch">Handwritten notes that feel like paper. Write, sketch and organise your pages, offline, on your device.</p>
+          <dl class="facts">
+            <dt>For</dt><dd>Students, journal keepers and anyone who thinks better with a pen.</dd>
+            <dt>Where</dt><dd>Android. The iOS version is in development.</dd>
+            <dt>Next</dt><dd>Install it from Google Play.</dd>
+          </dl>
+          <div class="actions"><a class="button button-app" href="https://play.google.com/store/apps/details?id=com.kararnab.bestnote" rel="noopener">Get it on Google Play<span class="visually-hidden"> – OpenNote</span></a><a class="button button-line" href="apps/opennote/index.html">Meet OpenNote</a></div>
+        </div>
+        <div class="pick-media pages">
+          <figure class="page page-back" data-sc-parallax="-0.8"><img src="assets/images/apps/opennote-organise.webp" alt="OpenNote: notebooks organised on a shelf." width="720" height="1280" loading="lazy"></figure>
+          <figure class="page page-front" data-write-in><img src="assets/images/apps/opennote-write.webp" alt="OpenNote: “Write like it’s real paper”, a handwritten page of Newton’s laws." width="720" height="1280" loading="lazy"></figure>
+        </div>
+      </div>
+    </article>
+
+    <article id="app-connections" class="pick pick-flip" data-app="connections" data-stage="live" data-sc-act="flow" aria-labelledby="pick-connections">
+      <div class="wrap pick-grid">
+        <div class="pick-label" data-sc-in data-sc-stagger="60">
+          <div class="pick-name"><span class="app-tile app-tile-lg" aria-hidden="true">C</span><span class="status status-live">On Google Play</span></div>
+          <h3 id="pick-connections">Connections</h3>
+          <p class="pick-pitch">A contacts app without Internet access. Your address book stays encrypted on your phone.</p>
+          <dl class="facts">
+            <dt>For</dt><dd>Android users who want a private address book that other apps can’t see.</dd>
+            <dt>Where</dt><dd>Android.</dd>
+            <dt>Next</dt><dd>Install it and import your contacts from a vCard file.</dd>
+          </dl>
+          <div class="actions"><a class="button button-app" href="https://play.google.com/store/apps/details?id=com.kararnab.connections" rel="noopener">Get it on Google Play<span class="visually-hidden"> – Connections</span></a><a class="button button-line" href="apps/connections/index.html">Meet Connections</a></div>
+        </div>
+        <div class="pick-media phones" data-sc-tilt="6">
+          <img class="phone phone-a" src="assets/images/apps/connections-list.webp" alt="Connections: the contact list." width="600" height="1333" loading="lazy">
+          <img class="phone phone-b" src="assets/images/apps/connections-detail.webp" alt="Connections: a contact’s details." width="600" height="1333" loading="lazy">
+        </div>
+      </div>
+    </article>
+
+    <div class="wrap"><h3 class="dev-head">In development</h3></div>
+
+    <article id="app-libraryz" class="pick pick-wide" data-app="libraryz" data-stage="dev" data-sc-act="flow" aria-labelledby="pick-libraryz">
+      <div class="wrap pick-grid">
+        <div class="pick-label" data-sc-in data-sc-stagger="60">
+          <div class="pick-name"><span class="app-tile" aria-hidden="true">Lz</span><span class="status status-dev">Open source · In development</span></div>
+          <h3 id="pick-libraryz">LibraryZ</h3>
+          <p class="pick-pitch">A book library your community builds together. Self-hosted, with apps for Android, desktop and the web.</p>
+          <dl class="facts">
+            <dt>For</dt><dd>Book clubs, labs, schools and families who want one shared shelf on their own server.</dd>
+            <dt>Where</dt><dd>Android, desktop and the web.</dd>
+            <dt>Next</dt><dd>Explore the code on GitHub, run it on your own server, or help build it.</dd>
+          </dl>
+          <div class="actions"><a class="button button-app" href="apps/libraryz/index.html">Meet LibraryZ</a><a class="button button-line" href="https://github.com/kararnab/LibraryZ" rel="noopener">GitHub<span class="visually-hidden"> – LibraryZ</span></a></div>
+        </div>
+        <figure class="pick-media screen" data-sc-parallax="-0.6"><img src="assets/images/apps/libraryz-browse.webp" alt="LibraryZ: browsing the shared catalog." width="1200" height="746" loading="lazy"></figure>
+      </div>
+    </article>
+
+    <article id="app-avplayer" class="pick pick-wide pick-flip" data-app="avplayer" data-stage="dev" data-sc-act="flow" aria-labelledby="pick-avplayer">
+      <div class="wrap pick-grid">
+        <div class="pick-label" data-sc-in data-sc-stagger="60">
+          <div class="pick-name"><span class="app-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="status status-dev">In development</span></div>
+          <h3 id="pick-avplayer">AVPlayer</h3>
+          <p class="pick-pitch">A self-hosted streaming library for your own films, series and music, on phone, desktop, browser and TV.</p>
+          <dl class="facts">
+            <dt>For</dt><dd>People who keep their own media collection and want to stream it from their own hardware.</dd>
+            <dt>Where</dt><dd>Phone, desktop, browser and TV.</dd>
+            <dt>Next</dt><dd>Not released yet. Ask about early access.</dd>
+          </dl>
+          <div class="actions"><a class="button button-app" href="apps/avplayer/index.html">Meet AVPlayer</a><a class="button button-line" href="about-me/index.html?app=AVPlayer#contact">Ask about early access</a></div>
+        </div>
+        <figure class="pick-media screen" data-sc-parallax="-0.6"><img src="assets/images/apps/avplayer-dashboard.webp" alt="AVPlayer’s home screen: Saltline, season 2 episode 4, ready to resume above a Continue Watching row." width="1672" height="941" loading="lazy"></figure>
+      </div>
+    </article>
+
+    <article id="app-codeatlas" class="pick pick-wide" data-app="codeatlas" data-stage="dev" data-sc-act="flow" aria-labelledby="pick-codeatlas">
+      <div class="wrap pick-grid">
+        <div class="pick-label" data-sc-in data-sc-stagger="60">
+          <div class="pick-name"><span class="app-tile" aria-hidden="true">Ca</span><span class="status status-dev">In development</span></div>
+          <h3 id="pick-codeatlas">CodeAtlas</h3>
+          <p class="pick-pitch">An algorithm concept map with a Java coding arena. Explore how ideas connect, practise problems, and track your mastery.</p>
+          <dl class="facts">
+            <dt>For</dt><dd>Learners practising data structures and algorithms.</dd>
+            <dt>Where</dt><dd>The web.</dd>
+            <dt>Next</dt><dd>Not released yet. Ask about early testing; no release date is set.</dd>
+          </dl>
+          <div class="actions"><a class="button button-app" href="apps/codeatlas/index.html">Meet CodeAtlas</a><a class="button button-line" href="about-me/index.html?app=CodeAtlas#contact">Ask about early access</a></div>
+        </div>
+        <figure class="pick-media screen" data-sc-parallax="-0.6"><img src="assets/images/apps/codeatlas-atlas.png" alt="CodeAtlas: the concept map, with Hash Map selected." width="1440" height="900" loading="lazy"></figure>
+      </div>
+    </article>
+  </section>
+
+  <section id="studio" class="selvedge" aria-labelledby="studio-title">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">How 1Loom works</p>
-        <h2 id="studio-title" class="section-title">Small, focused apps — built carefully, described honestly.</h2>
-      </div>
-      <div class="principles">
-        <div><p class="eyebrow">01</p><h3>On your device first</h3><p>OpenNote and Connections keep what you create on your phone. The developer has no access to your notes or contacts.</p></div>
-        <div><p class="eyebrow">02</p><h3>Plain-language privacy</h3><p>OpenNote, Connections and 1Chat each have a privacy policy that spells out what they do and don’t collect.</p></div>
-        <div><p class="eyebrow">03</p><h3>Honest status</h3><p>On Google Play, coming soon or in development: every app says exactly where it stands.</p></div>
-      </div>
+      <h2 id="studio-title" class="section-title">Small, focused apps. Built carefully, described honestly.</h2>
+      <dl class="tenets" data-sc-in data-sc-stagger="70">
+        <div><dt>On your device first</dt><dd>OpenNote and Connections keep what you create on your phone. The developer has no access to your notes or contacts.</dd></div>
+        <div><dt>Plain-language privacy</dt><dd>OpenNote, Connections and 1Chat each have a privacy policy that spells out what they do and don’t collect.</dd></div>
+        <div><dt>Honest status</dt><dd>On Google Play, coming soon or in development: every app says exactly where it stands.</dd></div>
+      </dl>
     </div>
   </section>
 
-  <section id="maker" class="band" aria-labelledby="maker-title">
-    <div class="wrap">
-      <div class="band-maker">
+  <section id="maker" class="cloth" aria-labelledby="maker-title">
+    <div class="wrap cloth-grid">
+      <div class="cloth-art">
+        <figure class="cloth-swatch" hidden>
+          <svg data-weave="cloth" role="img" aria-labelledby="cloth-caption"></svg>
+          <figcaption id="cloth-caption">
+            <span>Six apps, one loom. Each colour is an app:</span>
+            <ul class="cloth-legend">
+              <li data-app="opennote"><a href="#app-opennote">OpenNote</a></li>
+              <li data-app="connections"><a href="#app-connections">Connections</a></li>
+              <li data-app="onechat"><a href="#onechat">1Chat</a></li>
+              <li data-app="libraryz"><a href="#app-libraryz">LibraryZ</a></li>
+              <li data-app="avplayer"><a href="#app-avplayer">AVPlayer</a></li>
+              <li data-app="codeatlas"><a href="#app-codeatlas">CodeAtlas</a></li>
+            </ul>
+          </figcaption>
+        </figure>
+        <!-- QR label (maker's vCard). To remove it, delete this <a>; its CSS and JS do nothing without it.
+             Then delete arnab.vcf and assets/images/woven-label.svg. -->
+        <a class="woven-label" href="arnab.vcf" download="Arnab Kar.vcf"><img class="label-code" src="assets/images/woven-label.svg" alt="" width="37" height="37"><span class="label-text"><strong>Arnab Kar · 1Loom</strong><small class="on-pointer">Scan to save my card</small><small class="on-touch">Tap to save my card</small><span class="visually-hidden"> (vCard contact file)</span></span></a>
+      </div>
+      <div class="cloth-copy">
         <img src="assets/images/my-avatar.png" alt="" width="88" height="88">
-        <div>
-          <p class="eyebrow">The maker</p>
-          <h2 id="maker-title">Made by Arnab Kar</h2>
-          <p>1Loom is the independent studio of Arnab Kar, a lead software engineer in Bangalore who designs and builds its apps end to end.</p>
+        <h2 id="maker-title">Made by Arnab Kar</h2>
+        <p>1Loom is the independent studio of Arnab Kar, a lead software engineer in Bangalore who designs and builds its apps end to end. Every app is one thread. The loom is what holds them together.</p>
+        <div class="actions">
+          <a class="button button-solid" href="about-me/index.html">About the maker <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="button button-line" href="about-me/index.html#contact">Contact</a>
         </div>
       </div>
-      <a class="button" href="about-me/index.html">About the maker <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </section>
 </main>
+
+<div class="warp-band" aria-hidden="true"></div>
+
 
 <footer class="site-footer">
   <div class="wrap">
@@ -237,5 +293,7 @@
     <p class="legal">© 2026 1Loom. Made in Bangalore, India.</p>
   </div>
 </footer>
+<script src="assets/vendor/scrollcraft/scrollcraft.js"></script>
+<script src="assets/js/home.js"></script>
 </body>
 </html>

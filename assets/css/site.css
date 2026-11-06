@@ -398,10 +398,16 @@ code { font: 500 .85em var(--mono); padding: .1em .4em; border-radius: 6px; back
   .theme-toggle { margin-left: 0; padding: 0 12px; }
   .theme-toggle [data-theme-label] { display: none; }
   .band-maker { flex-direction: column; align-items: flex-start; }
-  .hero-shot { max-width: 280px; }
+  .hero-shot:not(.hero-shot-wide) { max-width: 280px; }
 }
 
+/* Same-site page changes cross-fade, and the app icon the visitor clicked travels into the next
+   page's hero (assets/js/motion.js names it). Browsers without view transitions just navigate. */
+@view-transition { navigation: auto; }
+::view-transition-group(app-icon) { animation-duration: 460ms; animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1); }
+
 @media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
@@ -476,3 +482,27 @@ code { font: 500 .85em var(--mono); padding: .1em .4em; border-radius: 6px; back
   .spotlight .actions { margin-bottom: 32px; }
 }
 @media (prefers-reduced-motion: reduce) { .faq summary::after { transition: none; } }
+
+/* ---- Foldables and dual screens: keep content off the hinge ------------- */
+/* When the browser reports two side-by-side screens (a book-posture foldable, a dual-screen device
+   spanned), two-column layouts snap to the screens with the gap covering the hinge, and single text
+   blocks stay on the first screen instead of running across the fold. Applies up to the .wrap max,
+   where the wrap's content box is exactly the viewport minus the gutters. */
+@media (horizontal-viewport-segments: 2) and (max-width: 1200px) {
+  :root {
+    --seg-a: calc(env(viewport-segment-width 0 0) - var(--gutter) - 24px);
+    --seg-b: calc(env(viewport-segment-width 1 0) - var(--gutter) - 24px);
+    --seg-gap: calc(env(viewport-segment-left 1 0) - env(viewport-segment-right 0 0) + 48px);
+  }
+  .app-hero .wrap, .features, .gallery, .gallery-2, .summary, .other-apps, .app-grid, .principles,
+  .site-footer .wrap, .policy-layout, .roadmap li {
+    grid-template-columns: var(--seg-a) var(--seg-b); column-gap: var(--seg-gap);
+  }
+  .app-hero.no-media .wrap { grid-template-columns: var(--seg-a); }
+  .codeatlas-previews .codeatlas-overview, .site-footer .legal { grid-column: auto; }
+  .section-head, .faq, .band .wrap > div, .wrap > .note, .policy-head .wrap > *,
+  figure:has(.hero-shot-wide) { max-width: var(--seg-a); }
+  /* The share card stacks its message and buttons on the first screen. */
+  .share-card { flex-direction: column; align-items: flex-start; }
+  .share-card > * { max-width: var(--seg-a); }
+}

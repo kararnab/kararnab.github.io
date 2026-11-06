@@ -20,10 +20,12 @@
   <link rel="icon" href="../../assets/images/logo.ico">
   <link rel="apple-touch-icon" href="../../welcome/images/1LoomIcon-192.png">
   <script src="../../assets/js/theme.js"></script>
+  <script src="../../assets/js/motion.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Instrument+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
   <link rel="stylesheet" href="../../assets/css/site.css">
+  <link rel="stylesheet" href="../../assets/css/motion.css">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AVPlayer","description":"AVPlayer is a self-hosted media project in development: stream your own films, series and music to phone, desktop, browser and TV.","url":"https://1loom.com/apps/avplayer/","image":"https://1loom.com/assets/images/og/avplayer.jpg","applicationCategory":"MultimediaApplication","operatingSystem":"Android, iOS, Web","publisher":{"@type":"Organization","name":"1Loom","url":"https://1loom.com/","logo":"https://1loom.com/welcome/images/1LoomIcon-512.png"},"author":{"@type":"Person","name":"Arnab Kar","url":"https://1loom.com/about-me/"}}</script>
 </head>
 <body data-app="avplayer">
@@ -45,7 +47,7 @@
 </header>
 
 <main id="main">
-  <section class="app-hero no-media" aria-labelledby="app-title">
+  <section class="app-hero" aria-labelledby="app-title">
     <div class="wrap">
       <div>
         <ol class="breadcrumb" aria-label="Breadcrumb">
@@ -61,12 +63,29 @@
         <div class="stores"><span class="store store-soon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.5 2.8c-.3.2-.5.6-.5 1.1v16.2c0 .5.2.9.5 1.1l9.1-9.2z"/><path d="M16.8 15.3 14.4 13l-8.9 9c.4.1.9 0 1.3-.2z" opacity=".75"/><path d="M16.8 8.7 6.8 2.2c-.4-.2-.9-.3-1.3-.2l8.9 9z" opacity=".75"/><path d="m20.3 10.8-2.6-1.5-2.6 2.7 2.6 2.7 2.6-1.5c.9-.6.9-1.8 0-2.4z"/></svg><span><small>Coming soon</small><strong>Google Play</strong></span></span><span class="store store-soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg><span><small>Private for now</small><strong>GitHub</strong></span></span></div>
         <p class="note">AVPlayer is in development and hasn’t been released. Its source code lives in a private GitHub repository for now.</p>
       </div>
+      <div class="cast" aria-hidden="true">
+        <!-- viewBox units: x is % of the scene width, y is % of its height × 0.9 (the scene is 10:9). Each
+             thread starts on an edge of the server and ends well behind its device, so it stays
+             attached while the devices move on scroll. -->
+        <svg class="cast-threads" viewBox="0 0 100 90" focusable="false">
+          <path id="thread-tv" pathLength="1" d="M63.5 73.8 C 63.5 64, 56 60, 54 45"/>
+          <path id="thread-laptop" pathLength="1" d="M55 78 C 51 78, 50 72, 45 72"/>
+          <path id="thread-phone" pathLength="1" d="M72 78 C 75 78, 75 68, 81 66"/>
+        </svg>
+        <div class="cast-tv"><div class="cast-screen"><img src="../../assets/images/apps/avplayer-dashboard.webp" alt="" width="1672" height="941"><span class="cast-quality" data-ladder="360p 720p 1080p">1080p</span></div></div>
+        <div class="cast-laptop"><div class="cast-screen"><img src="../../assets/images/apps/avplayer-music.webp" alt="" width="1586" height="992"></div></div>
+        <div class="cast-phone"><div class="cast-screen"><img src="../../assets/images/apps/avplayer-phone.webp" alt="" width="1744" height="902"></div></div>
+        <div class="cast-server"><i></i><small>Your server</small></div>
+      </div>
     </div>
   </section>
   <div class="wrap" style="margin-top:-24px">
     <figure style="margin:48px 0 0">
-      <img class="hero-shot hero-shot-wide" src="../../assets/images/apps/avplayer-tv.webp" alt="AVPlayer TV home screen design preview: a featured series with Resume and More info buttons above a Continue Watching row" width="1400" height="788">
-      <figcaption class="note" style="margin-top:12px;color:var(--muted);font-size:15px">TV mode, driven by a remote. A design preview from the project in development.</figcaption>
+      <div class="shot-frame">
+        <img class="hero-shot hero-shot-wide" src="../../assets/images/apps/avplayer-dashboard.webp" alt="AVPlayer home screen design preview: Saltline, season 2 episode 4 “Harbour Lights”, with a Resume button and 32 minutes left, above Ira’s Continue Watching row and the Top 10 in India today" width="1672" height="941">
+        <span class="shot-quality" aria-hidden="true" data-ladder="1080p|1440p|4K Ultra HD">4K Ultra HD</span>
+      </div>
+      <figcaption class="note" style="margin-top:12px;color:var(--muted);font-size:15px">The home screen picks up where you left off, with Continue Watching for each profile, and streams sharpen all the way up to 4K. A design preview from the project in development.</figcaption>
     </figure>
   </div>
 
@@ -102,8 +121,8 @@
     <div class="wrap">
       <h2 id="gallery-title" class="eyebrow">Design previews</h2>
       <ul class="gallery gallery-2">
-        <li><figure><img src="../../assets/images/apps/avplayer-music.webp" alt="AVPlayer desktop music library design preview" width="1200" height="750" loading="lazy"><figcaption>The music library on desktop.</figcaption></figure></li>
-        <li><figure><img src="../../assets/images/apps/avplayer-phone.webp" alt="AVPlayer phone screens design preview: home, series details, search and music player" width="1400" height="724" loading="lazy"><figcaption>Phone screens.</figcaption></figure></li>
+        <li><figure><img src="../../assets/images/apps/avplayer-music.webp" alt="AVPlayer desktop music player design preview: “Violet Hour” by Halcyon Room playing from Late Night Mix at 1:24 of 3:41, with an Up next queue of five tracks" width="1586" height="992" loading="lazy"><figcaption>The music player on desktop, with the Up next queue.</figcaption></figure></li>
+        <li><figure><img src="../../assets/images/apps/avplayer-phone.webp" alt="AVPlayer phone screens design preview: the For Ira home screen with Saltline and Continue watching, Saltline’s series page with Resume S2:E4, search results for “salt”, and Violet Hour playing" width="1744" height="902" loading="lazy"><figcaption>Phone screens: home, series, search and music.</figcaption></figure></li>
       </ul>
     </div>
   </section>
