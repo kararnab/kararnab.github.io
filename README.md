@@ -12,9 +12,12 @@ resume, writing links, and contact form.
 | `apps/`                                 | Pages for OpenNote, Connections, LibraryZ, AVPlayer, 1Chat, and CodeAtlas |
 | `about-me/index.html`                   | Maker profile, resume, portfolio, blog links, and Contact tab             |
 | `assets/css/`                           | Shared site and portfolio styles                                          |
+| `assets/css/about.css`                  | Maker page layout using the shared 1Loom design system                      |
 | `assets/js/theme.js`                    | Theme handling                                                            |
+| `assets/js/motion.js`, `assets/css/motion.css` | App page motion and the icon hand-off between pages (off for reduced motion) |
 | `assets/js/script.js`                   | Portfolio navigation and interactions                                     |
 | `assets/js/contact.js`                  | GoDaddy Conversations contact integration                                 |
+| `assets/js/contact-context.js`          | App-specific early-access and OpenNote support context                     |
 | `assets/images/`                        | Site images and icons                                                     |
 | `welcome/`                              | Welcome page, branding assets, and web manifest                           |
 | `privacy-policy/`                       | App privacy policies                                                      |
@@ -75,6 +78,7 @@ node tests/contact.test.cjs
 node tests/navigation.test.cjs
 node --check assets/js/contact.js
 node --check assets/js/script.js
+node --check assets/js/motion.js
 git diff --check
 ```
 
@@ -86,6 +90,45 @@ email test uses a simplified mock; native browser validation needs a browser che
 Three additional navigation tests cover direct tab links, tab changes, and unknown
 links. Early-access links prefill the message for AVPlayer, 1Chat, or CodeAtlas;
 visitors must enter their details and submit the form themselves.
+
+Early-access actions say **Request early access** and identify the app on the
+Contact tab. The accompanying explanation makes clear that a request does not
+grant access or automatically enroll the visitor in a waitlist. OpenNote's FAQ
+links to an app-specific support message on the same tab.
+
+Testimonials open through explicit buttons in a native modal dialog, supporting
+keyboard activation, Escape, and focus restoration. OpenNote's page includes free
+pricing and a FAQ covering note
+limits, devices, stylus input, offline use, backup/restore, and support.
+
+Use the studio voice (we/us/our) for app support, early-access requests, form
+feedback, and product messaging. Keep the maker biography and personal contact
+card personal, preserve testimonials as written, and retain the actual publisher
+identity in policy and terms pages.
+
+The maker page shares the studio header, theme toggle, fonts and footer. Its
+About, Experience, Projects, Writing and Contact navigation preserves the original
+fragment URLs (`#resume`, `#portfolio`, `#blog`, etc.). Contact links open directly
+to the form without the maker introduction or map. Project filters use the same
+buttons at every screen size; with JavaScript disabled, all sections and projects
+remain readable. The unused legacy portfolio stylesheet and template artwork
+have been removed. `assets/images/avatar-1.png` is used for Vijo Joseph’s
+recommendation; the unused avatar artwork and original studio branding files are
+retained for future use. Local logo fallbacks remain in use and must be retained.
+
+Testimonials use one manually scrollable row with three-line previews, a visible
+hint of the next card, and previous/next buttons. Full quotes remain available in
+the keyboard-accessible dialog. There is no automatic rotation.
+
+The organisation logo strip uses local copies for Swiggy and CureFit. Walgreens
+uses a Wikimedia file redirect; Rently uses
+`https://use.rently.com/wp-content/uploads/2023/03/logo.svg`, and the remaining
+logos use their previous hosted sources. Hosted images fall back to local
+`assets/images/client-*` copies if loading fails. Replacements at the same hosted
+filename appear after upstream/browser caches refresh; a rebrand uploaded under
+a new filename still needs a URL update.
+The heading describes teams and organisations worked with, rather than implying
+every organisation was a direct client.
 
 Portfolio tabs can be linked directly, for example `/about-me/index.html#contact` or
 `/about-me/index.html#portfolio`. Browser Back and Forward restore the selected tab.

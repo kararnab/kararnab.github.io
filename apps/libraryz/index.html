@@ -20,10 +20,12 @@
   <link rel="icon" href="../../assets/images/logo.ico">
   <link rel="apple-touch-icon" href="../../welcome/images/1LoomIcon-192.png">
   <script src="../../assets/js/theme.js"></script>
+  <script src="../../assets/js/motion.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Instrument+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
   <link rel="stylesheet" href="../../assets/css/site.css">
+  <link rel="stylesheet" href="../../assets/css/motion.css">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"LibraryZ","description":"LibraryZ is an open-source, self-hosted book library your community builds together, with apps for Android, desktop and the web. In development.","url":"https://1loom.com/apps/libraryz/","image":"https://1loom.com/assets/images/og/libraryz.jpg","applicationCategory":"ReferenceApplication","operatingSystem":"Android, Windows, macOS, Linux, Web","publisher":{"@type":"Organization","name":"1Loom","url":"https://1loom.com/","logo":"https://1loom.com/welcome/images/1LoomIcon-512.png"},"author":{"@type":"Person","name":"Arnab Kar","url":"https://1loom.com/about-me/"}}</script>
 </head>
 <body data-app="libraryz">
@@ -45,7 +47,7 @@
 </header>
 
 <main id="main">
-  <section class="app-hero no-media" aria-labelledby="app-title">
+  <section class="app-hero" aria-labelledby="app-title">
     <div class="wrap">
       <div>
         <ol class="breadcrumb" aria-label="Breadcrumb">
@@ -59,6 +61,16 @@
         <p class="note">Status reviewed <time datetime="2026-11-06">November 2026</time> · Open source · In development</p>
         <div class="stores"><a class="store" href="https://github.com/kararnab/LibraryZ" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg><span><small>Open source on</small><strong>GitHub</strong></span></a></div>
         <p class="note">LibraryZ is in development, with no tagged release yet. It’s MIT-licensed and self-hosted, with apps for Android, desktop and the web that you build and run yourself. There are no plans for app store releases.</p>
+      </div>
+      <div class="library" aria-hidden="true">
+        <div class="shelf"><span class="spine" style="--i:0;--h:78%;--c:#2e5e4e"><i>Book club</i></span><span class="spine" style="--i:1;--h:92%;--c:#b5793b"><i>Lab notes</i></span><span class="spine" style="--i:2;--h:84%;--c:#2f4a6d"><i>Year 9 maths</i></span><span class="spine" style="--i:3;--h:96%;--c:#8c3b2e"><i>Family recipes</i></span><span class="spine-gap" style="--i:4"></span><span class="spine" style="--i:5;--h:70%;--c:#d8c9a3"><i>Poems</i></span><span class="spine" style="--i:6;--h:88%;--c:#5b6b3a"><i>Field guide</i></span><span class="spine spine-lean" style="--i:7;--h:80%;--c:#6b4a6b"><i>Thesis drafts</i></span></div>
+        <div class="book">
+          <div class="page-stack"><div class="page-face"></div></div>
+          <div class="leaf" style="--i:2"><div class="page-face"></div><div class="page-face page-back"></div></div>
+          <div class="leaf" style="--i:1"><div class="page-face"></div><div class="page-face page-back"></div></div>
+          <div class="leaf" style="--i:0"><div class="page-face"></div><div class="page-face page-back"></div></div>
+          <div class="cover"><div class="cover-front"><strong>Our shelf</strong><small>Shared by everyone</small></div><div class="cover-inside"></div></div>
+        </div>
       </div>
     </div>
   </section>
@@ -118,7 +130,7 @@
     </div>
   </section>
 
-  <section class="section" aria-labelledby="more-title" style="padding-top:0">
+  <section class="section" aria-labelledby="more-title">
     <div class="wrap">
       <h2 id="more-title" class="eyebrow">More from 1Loom</h2>
       <ul class="other-apps">

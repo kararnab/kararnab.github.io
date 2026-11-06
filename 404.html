@@ -205,6 +205,31 @@ html { scroll-behavior: auto; }
 body { background: #fff; color: #000; }
 }
 .site-footer .brand-trademark { align-self: flex-start; margin: 1px 0 0 -7px; font-size: 10px; line-height: 1; font-weight: 500; }
+/* Narrow screens (a foldable's cover screen): let the navigation wrap, as site.css does. */
+@media (max-width: 600px) {
+  .site-header .wrap { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; padding-block: 8px; }
+  .site-nav { display: contents; }
+  .site-nav ul { grid-column: 1 / -1; grid-row: 2; justify-content: center; flex-wrap: wrap; }
+  .site-nav .theme-toggle { grid-column: 2; grid-row: 1; justify-self: end; }
+}
+/* Dual screens: keep the message on the first screen, off the hinge. */
+@media (horizontal-viewport-segments: 2) and (max-width: 1200px) {
+  .section > * { max-width: calc(env(viewport-segment-width 0 0) - var(--gutter) - 24px); }
+}
+/* The loose thread: woven through the warp on the left, then hanging free. It sways gently, and
+   pulls taut while the visitor points at the way home. Static when motion is reduced. */
+.loose { display: block; width: 100%; max-width: 600px; height: auto; margin: 0 0 28px; overflow: visible; }
+.loose .warp line { stroke: var(--accent-text); stroke-opacity: .3; stroke-width: 1.5px; }
+.loose path { fill: none; stroke: var(--accent-text); stroke-width: 2.5px; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.loose .tail { transform-box: view-box; transform-origin: 230px 40px; transition: transform 600ms cubic-bezier(0.23, 1, 0.32, 1); }
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  @keyframes sway { from { rotate: -3deg; } to { rotate: 4deg; } }
+  @keyframes unspool { from { stroke-dashoffset: 1; } }
+  .loose .tail { animation: sway 4.5s ease-in-out infinite alternate; }
+  .loose .tail path { stroke-dasharray: 1; animation: unspool 1200ms cubic-bezier(0.23, 1, 0.32, 1) 300ms both; }
+  .nf:has(.button-solid:is(:hover, :focus-visible)) .loose .tail { animation-play-state: paused; transform: scaleY(.1); }
+}
 </style>
   <meta name="robots" content="noindex">
 </head>
@@ -227,7 +252,12 @@ body { background: #fff; color: #000; }
 </header>
 
 <main id="main">
-  <section class="wrap section" aria-labelledby="nf-title">
+  <section class="wrap section nf" aria-labelledby="nf-title">
+    <svg class="loose" viewBox="0 0 600 80" aria-hidden="true" focusable="false">
+      <g class="warp"><line x1="40" y1="8" x2="40" y2="72"/><line x1="80" y1="8" x2="80" y2="72"/><line x1="120" y1="8" x2="120" y2="72"/><line x1="160" y1="8" x2="160" y2="72"/><line x1="200" y1="8" x2="200" y2="72"/></g>
+      <path d="M0 40 C 20 30, 30 30, 40 40 S 60 50, 80 40 S 100 30, 120 40 S 140 50, 160 40 S 180 30, 200 40 L 231 40"/>
+      <g class="tail"><path pathLength="1" d="M230 40 C 290 40, 320 70, 370 62 S 430 20, 470 34 S 520 70, 500 58 C 490 52, 505 44, 515 50"/></g>
+    </svg>
     <p class="eyebrow">Error 404</p>
     <h1 id="nf-title" class="section-title">This thread came loose.</h1>
     <p class="lead" style="margin-top:20px">The page you were looking for isn’t here. It may have moved, or the link may be mistyped.</p>
